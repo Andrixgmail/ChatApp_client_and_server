@@ -2,14 +2,21 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <!-- I moved to .NET 10, the current long term support release, because .NET 8 reached end of support in November 2026. -->
+    <TargetFramework>net10.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>TCPIPdemo2</RootNamespace>
+    <AssemblyName>ChatServer</AssemblyName>
+    <!-- I want the window to stay sharp on high resolution and mixed DPI monitors. -->
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <ApplicationDefaultFont>Segoe UI, 10pt</ApplicationDefaultFont>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SimpleTCP" Version="1.0.24" />
+    <!-- I dropped the old SimpleTCP package and now use the built in .NET sockets through the shared library. -->
+    <ProjectReference Include="..\Shared\Shared.csproj" />
   </ItemGroup>
 
 </Project>

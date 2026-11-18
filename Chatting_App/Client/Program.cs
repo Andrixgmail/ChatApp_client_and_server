@@ -3,13 +3,12 @@ namespace Client
     internal static class Program
     {
         /// <summary>
-        ///  The main entry point for the application.
+        ///  This is where the client app starts. I apply the project's Windows Forms settings
+        ///  (high DPI mode, default font and visual styles) and then open the chat window.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }
